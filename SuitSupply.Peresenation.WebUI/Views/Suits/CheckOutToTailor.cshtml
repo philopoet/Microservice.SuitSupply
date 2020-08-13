@@ -1,0 +1,39 @@
+﻿@using SuitSupply.Peresenation.WebUI.Models.Alteration;
+@model AlterationModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <h2>CheckOutToTailor</h2>
+
+<h4>Suit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CheckOutToTailor">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SuitId" class="control-label"></label>
+                <input asp-for="SuitId" class="form-control" />
+                <span asp-validation-for="SuitId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlteringTailor" class="control-label"></label>
+                <input asp-for="AlteringTailor" class="form-control" />
+                <span asp-validation-for="AlteringTailor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="CheckSuitOut" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

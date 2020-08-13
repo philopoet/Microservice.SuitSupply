@@ -1,0 +1,54 @@
+﻿@using SuitSupply.Peresenation.WebUI.Models.Alteration;
+@model AlterationModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>CreateAlteration</h2>
+
+<h4>Suit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateAlteration">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SuitId" class="control-label"></label>
+                <input asp-for="SuitId" class="form-control" />
+                <span asp-validation-for="SuitId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeftSleeveLength" class="control-label"></label>
+                <input asp-for="LeftSleeveLength" class="form-control" />
+                <span asp-validation-for="LeftSleeveLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RightSleeveLength" class="control-label"></label>
+                <input asp-for="RightSleeveLength" class="form-control" />
+                <span asp-validation-for="RightSleeveLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RighTrouserLength" class="control-label"></label>
+                <input asp-for="RighTrouserLength" class="form-control" />
+                <span asp-validation-for="RighTrouserLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeftTrouserLength" class="control-label"></label>
+                <input asp-for="LeftTrouserLength" class="form-control" />
+                <span asp-validation-for="LeftTrouserLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

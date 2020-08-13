@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Suitsupply.Application.Contracts\Suitsupply.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Suitsupply.Domain\Suitsupply.Domain.csproj" />
+    <ProjectReference Include="..\Suitsupply.Framework\Suitsupply.Framework.csproj" />
+  </ItemGroup>
+
+</Project>

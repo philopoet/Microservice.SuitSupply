@@ -1,0 +1,74 @@
+﻿@using SuitSupply.Peresenation.WebUI.Models.Alteration;
+@model IEnumerable<AlterationModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SuitId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeftSleeveLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RightSleeveLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RighTrouserLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeftTrouserLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SuitAlterationStatusString)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlteringTailor)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuitId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeftSleeveLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RightSleeveLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RighTrouserLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeftTrouserLength)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SuitAlterationStatusString)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlteringTailor)
+            </td>
+            <td>
+                <a asp-action="CreateAlteration" asp-route-id="@item.SuitId">Add Alteration</a> |
+                <a asp-action="CheckOutToTailor" asp-route-id="@item.SuitId">CheckOutToTailor</a> |
+                <a asp-action="Delete" asp-route-id="@item.SuitId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

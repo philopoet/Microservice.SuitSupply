@@ -1,0 +1,74 @@
+﻿@model SuitSupply.ReadModel.Entities.Suit
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Suit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="LeftSleeve" class="control-label"></label>
+                <input asp-for="LeftSleeve" class="form-control" />
+                <span asp-validation-for="LeftSleeve" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RightSleeve" class="control-label"></label>
+                <input asp-for="RightSleeve" class="form-control" />
+                <span asp-validation-for="RightSleeve" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RighTrouser" class="control-label"></label>
+                <input asp-for="RighTrouser" class="form-control" />
+                <span asp-validation-for="RighTrouser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeftTrouser" class="control-label"></label>
+                <input asp-for="LeftTrouser" class="form-control" />
+                <span asp-validation-for="LeftTrouser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlterationStatus" class="control-label"></label>
+                <select asp-for="AlterationStatus" class="form-control"></select>
+                <span asp-validation-for="AlterationStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Texture" class="control-label"></label>
+                <input asp-for="Texture" class="form-control" />
+                <span asp-validation-for="Texture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlteringTailor" class="control-label"></label>
+                <input asp-for="AlteringTailor" class="form-control" />
+                <span asp-validation-for="AlteringTailor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner" class="control-label"></label>
+                <input asp-for="Owner" class="form-control" />
+                <span asp-validation-for="Owner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
